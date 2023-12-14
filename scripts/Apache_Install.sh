@@ -1,13 +1,9 @@
 #! / bin/bash
 
 #update, install, and start the Apache
+sudo apt update && sudo apt upgrade -y
 
-sudo yum update -y
-sudo yum install httpd
-sudo systemctl enable httpd
-sudo systemctl start httpd
+sudo apt install apache2 -y
 
-#message to create index.html file
-echo "<h1>Keep pushing green!<h1>" >> /var/www/html/index.html
-
-
+sudo systemctl status apache2
+sudo systemctl restart apache2
